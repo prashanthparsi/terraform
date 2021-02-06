@@ -1,6 +1,7 @@
 resource "aws_security_group" "webserver_sg" {
   ingress {
-    cidr_blocks = [var.my_system_cidr]
+    #the below are the github webhook ips https://api.github.com/meta
+    cidr_blocks = [var.my_system_cidr, "192.30.252.0/22", "185.199.108.0/22", "140.82.112.0/20"] 
     description = "Terra Form TCP Security Group"
     from_port   = var.http_port
     protocol    = "tcp"

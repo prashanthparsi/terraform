@@ -4,7 +4,7 @@ resource "aws_instance" "hellow-world" {
   vpc_security_group_ids = ["${aws_security_group.webserver_sg.id}"]
   key_name               = "terraform"
   tags = {
-    Name = "Hello World"
+    Name = "Hello World - "
   }
   user_data = <<-EOF
     #!/bin/bash
